@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+
+
+    <script>
+
+        var appHeader = {
+            template : '<div>해더 : {{num}} </div>'
+        };
+    
+        var appContent = {
+            template : '<div>컨텐츠 : <button v-click="pass">전달</button></div>',
+            methods :{
+                pass : function(){
+                    $.emit('passs' , 10);
+                }
+            }
+
+        };
+
+        new vue({
+            el : '#app',
+            components : {
+                'app-header' : appHeader,
+                'app-content' : appContent
+            },
+            methods : {
+                receiveFunc : function(value){
+                    this.num = this.num + value;
+                }
+            },
+            data : {
+                num : 10
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

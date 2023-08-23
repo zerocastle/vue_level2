@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <button v-on:click="click">
+            click button
+        </button>
+
+        <input type="text" class="text" v-on:keyup.enter="clickButton"/>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el : '#app',
+            methods : {
+                click : function(){
+                    console.log('clicked');
+                },
+                clickButton : function(){
+                    console.log('click input')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <style>
+        .warning {
+            color: red;
+        }
+    </style>
+
+    <div id="app">
+        <p v-bind:class="{warning : logic}">아아아아</p>
+        <p v-bind:class="logic2">렁나러ㅏㅣㄴ어히ㅏ</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                logic : false
+            },
+            computed : {
+                logic2 : function(){
+                    return this.logic ? 'warning' : false;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

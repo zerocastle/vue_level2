@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:id="uuid">{{num}}</p>
+        <p v-bind:class="classt">{{doubleNum}}</p>
+
+        <div v-if="loading">loading</div>
+
+        <div v-else="loading">test user has been logged in</div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                num : 1,
+                uuid : 'ship',
+                classt : 'per',
+                loading : true
+            },
+            computed : {
+                doubleNum : function(){
+                    return this.num * 2;
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
